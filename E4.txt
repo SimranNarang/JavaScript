@@ -1,0 +1,35 @@
+
+var myRecipie = {title:"Mole",serves : 2,ingredients:["Cinnamon","cumin","cocoa"]};
+
+
+console.log(myRecipie.title);
+console.log("Serves: "+myRecipie.serves);
+console.log("Ingredients: ");
+for(i=0;i<myRecipie.ingredients.length;i++){ 
+console.log(myRecipie.ingredients[i]);
+}
+____________________________________________________________________________________
+
+var books = [
+  {title: 'Steves Jobs',
+   author: 'Walter Isaacson',
+   alreadyRead: true
+  },
+  {title: 'Elon Musk',
+  author: 'Ashlee Vance',
+  alreadyRead: false
+  }];
+
+for (var i = 0; i < books.length; i++) {
+  var book = books[i];
+  var bookInfo = book.title + '" by ' + book.author;
+  if (book.alreadyRead) {
+    console.log('You already read "' + bookInfo);
+  } else {
+    console.log('You still need to read "' + bookInfo);
+  }
+}
+Output:
+
+ You already read "Steves Jobs" by Walter Isaacson 
+ You still need to read "Elon Musk" by Ashlee Vance

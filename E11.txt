@@ -1,0 +1,67 @@
+FUNCTION:
+
+
+function myFunction(){
+	
+	console.log("Hello World");
+}
+
+myFunction();
+
+Output:
+
+Hello World
+
+________________________________________________
+
+function myFunction(){ //changed name to myFunction from myFunc
+	
+	console.log("Hello World");
+}
+
+myFunction();
+
+Output:
+
+Hello World
+
+__________________________________________________
+
+function myFunction(){ //changed func to function to make it working
+	
+	console.log("Hello World");
+}
+
+myFunction();
+
+Output:
+
+Hello World
+
+_____________________________________________________
+
+function myFunction(name) {
+    return "Hello " + name;
+}
+
+console.log( myFunction("Jhon") );
+
+Output:
+
+Hello Jhon
+
+____________________________________________
+
+
+function myFunction(){
+	
+	console.log("Hello World");
+}
+
+myFunction();
+
+Output:
+
+Hello World
+
+

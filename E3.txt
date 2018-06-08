@@ -1,0 +1,27 @@
+
+
+
+var obj = new Object();
+ obj.name = "simran"; //property
+ obj.getName = function(){ return obj.name }; //function
+
+ _______________________________________________________________
+
+var obj {
+ name : "simran"; //property
+ getName: function(){ 
+ return obj.name }; //function
+}
+
+
+____________________________________________________________
+
+function Cat(name, color) {
+  this.name = name;
+  this.color = color;
+}
+Cat.prototype.myFunction = function(){
+	return "Some-Random-Value";
+};
+
+var catC = new Cat("Fluffy", "White");

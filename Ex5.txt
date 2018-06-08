@@ -1,0 +1,51 @@
+if (true) {
+    document.getElementById("demo").innerHTML = "Well done!";
+}
+
+___________________________________________________________
+ 
+ if(10>5){
+console.log("I did it");
+}
+
+_________________________________________________________
+
+var firstName = "John";
+
+if (firstName === "John") {
+    document.getElementById("demo").innerHTML = "Hello John!";
+}
+
+_____________________________________________________________
+
+var firstName = "Greg";
+
+if (firstName === "John") {
+  console.log("Hello John!");
+}
+else {
+  console.log("You're not Jhon");
+}
+
+_________________________________________________________
+
+var age = 25;
+if(age>18){
+console.log("Old Enough");
+}else {
+console.log("Too young");
+}
+
+_________________________________________________________
+
+var greeting;
+var hour = new Date().getHours();
+
+if (hour < 18) {
+    greeting = "Good day";
+    }
+else{
+    greeting = "Good evening";
+}
+
+console.log(greeting);

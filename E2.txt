@@ -1,0 +1,30 @@
+
+var person = {firstName:"John", lastName:"Doe"};
+console.log( person.firstName );
+
+Output:
+
+Jhon
+
+___________________________________________
+
+
+var person = {firstName:"John", lastName:"Doe", country :"USA"};
+console.log( person.country);
+
+Output:
+
+USA
+
+___________________________________________
+
+var person = {name:"John", age : 20};
+console.log( person.name+" is "+ person.age +" years old.");
+
+Output:
+
+John is 50 year old.
+
+______________________________________________________
+
+

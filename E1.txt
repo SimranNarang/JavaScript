@@ -1,0 +1,56 @@
+Input:
+
+var carName ="Volvo";
+console.log(carName);
+
+Output:
+
+Volvo
+
+________________________________________________
+
+Input:
+
+var number = 50;
+console.log(number);
+
+Output:
+
+50
+
+______________________________________________________
+
+Given:
+var carName = "Volvo";
+document.getElementById("demo").innerHTML = carname;
+
+//answer: as JavaScript is case sensitive : canname will be changed to carName to get the output hence:
+
+var carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+
+_______________________________________________________
+
+var x=5;
+var y=10;
+console.log(x+y);
+
+Output:
+15
+
+________________________________________________________
+
+var x=5;
+var y=10;
+var z = x+y;
+console.log(z);
+
+Output:
+15
+___________________________________
+
+var firstName="Jhon", lastName: "Doe", age=35;
+________________________________________________________
+
+
+

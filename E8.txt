@@ -1,0 +1,84 @@
+var i;
+for (i = 1; i < 10; i++) {
+	if(i==5){break;}
+    console.log(i+"\n");
+}
+
+Output:
+1
+2
+3
+4
+
+____________________________________________________________
+
+var i;
+for (i = 1; i < 10; i++) {
+	if(i==5){continue;}
+    console.log(i+"\n");
+}
+
+Output:
+1
+2
+3
+4
+6
+7
+8
+9
+
+______________________________________________________________
+
+
+var i;
+for (i = 1; i < 10; i++) {
+	if(i==5 || i==7){continue;}
+    console.log(i+"\n");
+}
+
+Output:
+1
+2
+3
+4
+6
+8
+9
+___________________________________________________________________-
+
+function checkCar(favCar) {
+  var text;
+  switch(favCar) {
+    switch(favCar) {
+    case "BMW":
+      text = "German car";
+      break;
+    case "Ford":
+      text = "American car";
+      break;
+    case "Peugeot":
+      text = "French car";
+      break;
+    default:
+      text = "Unknown car name";
+ 
+console.log(text);
+}
+
+____________________________________________________________________________
+
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+for (i = 0; i < cars.length; i++) {
+	 if(cars[i]=== "Saab"){continue;}
+    console.log(cars[i]+"\n");
+}
+
+Output:
+
+BMW
+
+Volvo
+
+Ford

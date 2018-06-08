@@ -1,0 +1,36 @@
+function:
+
+
+function myFunction(age){	
+	var votable;	
+	votable=(age<18)? "Too young":"Yes you can vote!!"; 
+	console.log(votable);	
+	}
+
+Input:
+myFunction(22)
+
+Output:
+Yes you can vote!!
+
+______________________________________________________________________
+
+
+function:
+
+
+function myFunction(name){	
+	var text;	
+	text =(name == "Jhon")? "Hello Jhon!!":"You're not Jhon!"; 
+	console.log(text);	
+	}
+
+Input:
+myFunction("Simran")
+
+Output:
+You're not Jhon!
+
+_____________________________________________________________________
+
+
