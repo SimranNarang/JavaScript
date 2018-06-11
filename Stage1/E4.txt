@@ -5,10 +5,12 @@ var myRecipie = {title:"Mole",serves : 2,ingredients:["Cinnamon","cumin","cocoa"
 console.log(myRecipie.title);
 console.log("Serves: "+myRecipie.serves);
 console.log("Ingredients: ");
+
 for(i=0;i<myRecipie.ingredients.length;i++){ 
 console.log(myRecipie.ingredients[i]);
 }
 ____________________________________________________________________________________
+
 
 var books = [
   {title: 'Steves Jobs',
@@ -29,6 +31,7 @@ for (var i = 0; i < books.length; i++) {
     console.log('You still need to read "' + bookInfo);
   }
 }
+
 Output:
 
  You already read "Steves Jobs" by Walter Isaacson 

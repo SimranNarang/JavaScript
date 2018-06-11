@@ -1,0 +1,18 @@
+1)
+
+is_array = function(input){
+	
+	if(toString.call(input)=="[object Array]")
+	return true;
+
+	return false;
+
+}
+
+Input/Output:
+
+console.log(is_array('w3resoueces'));
+false
+
+console.log(is_array(['black','blue','white','grey']));
+true

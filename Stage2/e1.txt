@@ -1,0 +1,65 @@
+var cars = ["Saab","Volvo","BMW"];
+for(i=0;i<cars.length;i++){
+console.log(cars[i]);
+	
+}
+
+Output:
+
+Saab
+Volvo
+BMW
+
+--------------------------------------------------------
+
+var cars = ["Saab", "Volvo", "BMW"];
+console.log(cars[1]);
+
+Output:
+
+Volvo
+
+--------------------------------------------------------
+
+var cars = ["Saab", "Volvo", "BMW"];
+cars[0]="Opel";
+for(i=0;i<cars.length;i++){
+console.log(cars[i]);
+	
+}
+
+Output:
+
+
+Opel
+Volvo
+BMW
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+var cars = ["Saab", "Volvo", "BMW"];
+var len = cars.length;
+console.log(len);
+
+Output:
+
+3
+
+---------------------------------------------------
+
+var cars = ["Saab", "Volvo", "BMW"];
+cars[3]="Mercedes";
+for(i=0;i<cars.length;i++){
+console.log(cars[i]);
+	
+}
+
+Output:
+
+
+Saab
+Volvo
+BMW
+Mercedes
+
+=-=-=--=-=-=-=-=-=-=-=-==-=-==-=-=-=

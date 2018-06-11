@@ -1,0 +1,4 @@
+var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+fruits.sort();
+Output:
+(4) ["Apple", "Banana", "Kiwi", "Orange"]

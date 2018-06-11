@@ -1,0 +1,36 @@
+var fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Kiwi");
+
+console.log(fruits);
+
+Output:
+
+["Banana", "Orange", "Apple", "Kiwi"]
+-------------------------------------------------------
+
+var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+fruits.splice(1,2);
+
+console.log(fruits);
+
+Output:
+
+["Banana", "Kiwi"]
+
+----------------------------------------------------------
+
+var girls = ["Cecilie", "Lone"];
+var boys = ["Emil", "Tobias", "Linus"];
+var children = girls.concat(boys);
+console.log(children);
+Output:
+
+ ["Cecilie", "Lone", "Emil", "Tobias", "Linus"]
+-------------------------------------------------------
+var fruits = ["Banana", "Orange", "Apple"];
+fruits.pop();
+console.log(fruits);
+Output:
+
+ ["Banana", "Orange"]
+--------------------------------------------------------

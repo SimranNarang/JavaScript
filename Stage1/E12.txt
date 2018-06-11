@@ -1,4 +1,4 @@
-function tellFortune(children,name,location,title){ 
+	function tellFortune(children,name,location,title){ 
 
 	return "You will be a "+title+" in "+location+", and married to "+name+" with "+children+" kids."
 	}

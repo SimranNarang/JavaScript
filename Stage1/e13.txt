@@ -1,0 +1,468 @@
+
+1)
+
+function _keys(obj) 
+ {
+    if (!isObject(obj)) return [];
+    if (Object.keys) return Object.keys(obj);
+    var keys = [];
+    for (var key in obj) if (_.has(obj, key)) keys.push(key);
+    return keys;
+  }
+function isObject(obj) 
+{
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  }
+
+Input/Output:
+
+console.log(_keys({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
+
+
+["red","green","white"]
+
+-------------------------------------------------------------------
+2)
+var student = { 
+name : "David Rayy", 
+sclass : "VI", 
+rollno : 12 };
+
+console.log(student);
+
+delete student.rollno;
+
+console.log(student);
+
+Output:
+{name: "David Rayy", sclass: "VI", rollno: 12}
+{name: "David Rayy", sclass: "VI"}
+
+=====================================================================
+
+3)
+
+Object.objsize = funtion(o){
+	var os = 0,key;
+	for(key in o){
+	if(o.hasOwnProperty(key)) os++;
+	}
+	return os;
+	};
+Input/Output:
+
+var student = { 
+name : "David Rayy", 
+sclass : "VI", 
+rollno : 12 };
+
+
+Object.objsize(student);
+3
+
+=========================================================================
+
+5)
+
+function Cylinder(cyl_height, cyl_diameter) {
+  this.cyl_height = cyl_height;
+  this.cyl_diameter = cyl_diameter;
+}
+
+Cylinder.prototype.Volume = function () {
+  var radius = this.cyl_diameter / 2;
+  return this.cyl_height * Math.PI * radius * radius;
+};
+
+var cyl = new Cylinder(7, 4);
+
+
+console.log('volume =', cyl.Volume().toFixed(4));
+
+Output:
+volume = 87.9646
+
+============================================================================
+
+6)
+
+Array.prototype.bubbleSort_algo = function() 
+{
+var is_sorted = false;
+ while (!is_sorted) 
+ {
+    is_sorted = true;
+    for (var n = 0; n < this.length - 1; n++) 
+    {
+      if (this[n] > this[n+1]){
+        var x = this[n+1];
+        this[n+1] = this[n];
+        this[n] = x;
+        is_sorted = false;
+      }
+    }
+  }
+  return this;
+};
+
+console.log([6,4,0, 3,-2,1].bubbleSort_algo());
+
+Output: [-2, 0, 1, 3, 4, 6]
+
+====================================================================================
+
+7)
+
+String.prototype.sub_String = function() 
+{
+  var subset = [];
+  for (var m = 0; m < this.length; m++) 
+  {
+    for (var n = m+1; n<this.length+1; n++) 
+    {
+      subset.push(this.slice(m,n));
+    }
+  }
+  return subset;
+};
+
+console.log("dog".sub_String());
+
+Output:
+["d", "do", "dog", "o", "og", "g"]
+
+
+============================================================================================
+
+8)
+
+function my_Clock() 
+  {
+  this.cur_date = new Date();
+  this.hours = this.cur_date.getHours();
+  this.minutes = this.cur_date.getMinutes();
+  this.seconds = this.cur_date.getSeconds();
+  }
+my_Clock.prototype.run = function ()
+  {
+  setInterval(this.update.bind(this), 1000);
+  };
+my_Clock.prototype.update = function () 
+  {
+  this.updateTime(1);
+  console.log(this.hours + ":" + this.minutes + ":" + this.seconds);
+  };
+my_Clock.prototype.updateTime = function (secs) 
+  {
+  this.seconds+= secs;
+ if (this.seconds >= 60)
+  {
+  this.minutes++;
+  this.seconds= 0;
+  }
+ if (this.minutes >= 60)
+  {
+  this.hours++;
+  this.minutes=0;
+  }
+if (this.hours >= 24)
+  {
+  this.hours = 0;
+  }
+};
+var clock = new my_Clock();
+  clock.run();
+  
+
+  Output:
+11:25:10
+11:25:11
+11:25:12
+11:25:13
+11:25:14
+11:25:15
+11:25:16
+11:25:17
+11:25:18
+11:25:19
+11:25:20
+11:25:21
+
+
+====================================
+
+10)
+
+var library = [ 
+   {
+       title: 'Bill Gates',
+       author: 'The Road Ahead',
+       libraryID: 1254
+   },
+   {
+       title: 'Steve Jobs',
+       author: 'Walter Isaacson',
+       libraryID: 4264
+   },
+   {
+       title: 'Mockingjay: The Final Book of The Hunger Games',
+       author: 'Suzanne Collins',
+       libraryID: 3245
+   }];
+var sort_by = function(field_name, reverse, initial){
+
+   var key = initial ?
+       function(x)
+             {
+               return initial(x[field_name]);
+             } :
+       function(x) 
+             {
+               return x[field_name];
+             };
+
+   reverse = !reverse ? 1 : -1;
+
+   return function (x, y) {
+       return x = key(x), y = key(y), reverse * ((x > y) - (y > x));
+     } ;
+};
+
+
+var newobj = library.sort(sort_by('libraryID', true, parseInt));
+
+console.log(newobj);
+
+Output:
+
+ [{
+  author: "Walter Isaacson",
+  libraryID: 4264,
+  title: "Steve Jobs"
+}, [object Object] {
+  author: "Suzanne Collins",
+  libraryID: 3245,
+  title: "Mockingjay: The Final Book of The Hunger Games"
+}, [object Object] {
+  author: "The Road Ahead",
+  libraryID: 1254,
+  title: "Bill Gates"
+}]
+
+==========================================================================
+11)
+function all_properties(obj) 
+{
+ return Object.getOwnPropertyNames(obj);
+}
+
+console.log(all_properties(Math));
+
+console.log(all_properties(Array));
+
+
+
+Output:
+
+["abs","acos","acosh","asin","asinh","atan","atanh","atan2","ceil","cbrt","expm1","clz32","cos","cosh","exp","floor","fround","hypot","imul","log","log1p","log2","log10","max","min","pow","random","round","sign","sin","sinh","sqrt","tan","tanh","trunc","E","LN10","LN2","LOG10E","LOG2E","PI","SQRT1_2","SQRT2"]
+
+["length","name","prototype","isArray","from","of"]
+
+===========================================================================
+
+12)
+
+function parse_URL(url) {
+    var a = document.createElement('a');
+    a.href = url;
+    return {
+        source: url,
+        protocol: a.protocol.replace(':', ''),
+        host: a.hostname,
+        port: a.port,
+        query: a.search,
+        params: (function () {
+            	var ret = {},
+                seg = a.search.replace(/^\?/, '').split('&'),
+                len = seg.length,
+                i = 0,
+                s;
+            for (; i < len; i++) {
+                if (!seg[i]) {
+                    continue;
+                }
+                s = seg[i].split('=');
+                ret[s[0]] = s[1];
+            }
+            return ret;
+        })(),
+        file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ''])[1],
+        hash: a.hash.replace('#', ''),
+        path: a.pathname.replace(/^([^\/])/, '/$1'),
+        relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
+        segments: a.pathname.replace(/^\//, '').split('/')
+    };
+}
+
+console.log(parse_URL('https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python'));
+
+Output:
+
+{
+	file:"search"
+	hash:""
+	host:"github.com"
+	params:{utf8: "%E2%9C%93", q: "python"}
+	path:"/pubnub/python/search"
+	port:""
+	protocol:"https"
+	query:"?utf8=%E2%9C%93&q=python"
+	relative:"/pubnub/python/search?utf8=%E2%9C%93&q=python"
+	segments:(3) ["pubnub", "python", "search"]
+	source:"https://github.com/pubnub/python/search?utf8=%E2%9C%93&q=python"
+	__proto__:Object
+}
+
+=====================================
+
+13)
+function allKeys(obj) {
+    if (!isObject(obj)) return [];
+    var keys = [];
+    for (var key in obj) keys.push(key);
+    return keys;
+}
+function isObject(obj) 
+{
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  }
+function Student(name) {
+  this.name = name;
+}
+Student.prototype.rollno = true;
+console.log(allKeys(new Student("Sara")));
+
+Output:
+["name", "rollno"]
+
+=================================================
+14)
+
+same as 1st!
+
++++===================================================
+
+15)
+
+function key_value_pairs(obj) 
+   {
+    var keys = _keys(obj);
+    var length = keys.length;
+    var pairs = Array(length);
+    for (var i = 0; i < length; i++) 
+    {
+      pairs[i] = [keys[i], obj[keys[i]]];
+    }
+    return pairs;
+  }
+
+function _keys(obj) 
+  {
+    if (!isObject(obj)) return [];
+    if (Object.keys) return Object.keys(obj);
+    var keys = [];
+    for (var key in obj) if (_.has(obj, key)) keys.push(key);
+    return keys;
+  }
+function isObject(obj) 
+ {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  }
+
+  var student = { 
+name : "David Rayy", 
+sclass : "VI", 
+rollno : 12 };
+
+console.log(key_value_pairs(student));
+
+
+
+
+  Output:
+
+ [ ["name", "David Rayy"]
+ ["sclass", "VI"]
+ ["rollno", 12]]
+
+ =============================================
+16)
+
+ function invert_key_value(obj) {
+    var result = {};
+    var keys = _keys(obj);
+    for (var i = 0, length = keys.length; i < length; i++) {
+      result[obj[keys[i]]] = keys[i];
+    }
+    return result;
+  }
+function _keys(obj) 
+  {
+    if (!isObject(obj)) return [];
+    if (Object.keys) return Object.keys(obj);
+    var keys = [];
+    for (var key in obj) if (_.has(obj, key)) keys.push(key);
+    return keys;
+  }
+function isObject(obj) 
+ {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  }
+
+  var student = { 
+name : "David Rayy", 
+sclass : "VI", 
+rollno : 12 };
+
+console.log(invert_key_value(student));
+
+
+
+
+
+  output:
+
+	{12: "rollno", David Rayy: "name", VI: "sclass"}
+
+
+
+
+	====================================================================
+
+17)
+
+	function hasKey(obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
+  	}
+
+  	var student = { 
+	name : "David Rayy", 
+	sclass : "VI", 
+	rollno : 12 };
+	console.log(hasKey(student,"name"));
+
+	Output:
+
+ 	true
+===================================================
+
+18)
+
+In stage 2
+
+
+

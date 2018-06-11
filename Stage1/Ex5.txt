@@ -1,5 +1,6 @@
+
 if (true) {
-    document.getElementById("demo").innerHTML = "Well done!";
+    consol.log( "Well done!");
 }
 
 ___________________________________________________________
