@@ -1,0 +1,77 @@
+var x = JSON.parse('{"foo": 1, "bar": 2}');
+console.log(x.foo);
+console.log(x.bar);
+
+Output:
+1
+2
+
+---------------------------------------------
+
+var reviver = function(key, value) {
+  console.log('reviver called with key="' + key + '", value=' + value);
+  if (key === 'foo' ) {
+    return value * 10;
+  }
+  return value;
+};
+var x = JSON.parse('{"foo": 1, "bar": 2, "bof" : 3}', reviver);
+console.log(x.foo);
+console.log(x.bar);
+console.log(x.bof);
+
+Output:
+
+reviver called with key="foo", value=1
+reviver called with key="bar", value=2
+reviver called with key="bof", value=3
+reviver called with key="", value=[object Object]
+10
+2
+3
+
+--------------------------------------------------
+
+var x = { foo: 1, bar: 2 };
+console.log(JSON.stringify(x));
+
+x.toJSON = function() {
+  return { baz: 3 };
+};
+console.log(JSON.stringify(x));
+
+Output:
+
+{"foo":1,"bar":2}
+{"baz":3}
+
+-----------------------------------------------------
+
+var x = { foo: 1, bar: 2 };
+console.log(JSON.stringify(x, ['foo']));
+
+Output:
+{"foo":1}
+
+-------------------------------------------------------
+
+var x = { foo: 1, bar: 2 };
+
+var replacer = function(key, value) {
+  console.log('replacer called with key="' + key + '", value=' + value);
+  if (key === 'foo') return value * 10;
+  return value;
+}
+console.log(JSON.stringify(x, replacer, 's'));
+
+Output:
+
+replacer called with key="", value=[object Object]
+replacer called with key="foo", value=1
+replacer called with key="bar", value=2
+{
+s"foo": 10,
+s"bar": 2
+}
+------------------------------------------------------
+
