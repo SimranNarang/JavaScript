@@ -1,5 +1,5 @@
-1) Write a JavaScript program to display the current day and time in the following format mm/dd/yyyy
-
+1) Write a JavaScript program to display the current day and time in the following format mm/dd/yyyy?
+ 
 
 var today = new Date();
 var dd = today.getDate();
@@ -26,20 +26,21 @@ Output:
 
 2) Write a JavaScript conditional statement to find the largest of five numbers?
 
-function largest(a,b,c,d,e,f){
-	if (a>b && a>c && a>d && a>f)
+
+function largest(a,b,c,d,e){
+	if (a>b && a>c && a>d && a>e)
 	{
 	    console.log(a);
 	}
-	else if (b>a && b>c && b>d && b>f)
+	else if (b>a && b>c && b>d && b>e)
 	{
 	    console.log(b);
 	}
-	else if (c>a && c>b && c>d && c>f)
+	else if (c>a && c>b && c>d && c>e)
 	{
 	    console.log(c);
 	}
-	else if (d>a && d>c && d>b && d>f)
+	else if (d>a && d>c && d>b && d>e)
 	{
 	    console.log(d);
 	}
@@ -64,6 +65,7 @@ Output:
 function numEven(num){
 str = num.toString();
 result = [str[0]];
+}
   
 for(let x=1; x<str.length; x++)
   {
@@ -94,7 +96,7 @@ Output:
 var fruits=["Banana","Apple","Chikoo","Mango","Kiwi"];
 fruits.sort();
 console.log(fruits);
-fruits.reverse();
+fruits.sort().reverse();
 console.log(fruits);
 
 Output:
@@ -102,33 +104,34 @@ Output:
 ["Apple", "Banana", "Chikoo", "Kiwi", "Mango"]
 ["Mango", "Kiwi", "Chikoo", "Banana", "Apple"]
 
+
 ===========================================================================================
 
 5) Write a JavaScript program to remove duplicate items from an array?
 
-function removeDuplicates(num) {
-  var x,
-      len=num.length,
-      out=[],
-      obj={};
- 
-  for (x=0; x<len; x++) {
-    obj[num[x]]=0;
-  }
-  for (x in obj) {
-    out.push(x);
-  }
-  return out;
-}
-var Mynum = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];
-result = removeDuplicates(Mynum);
-console.log(Mynum);
-console.log(result);
- 
- Output:
+	function removeDuplicates(num) {
+	  var x,
+	      len=num.length,
+	      out=[],
+	      obj={};
+	 
+	  for (x=0; x<len; x++) {
+	    obj[num[x]]=0;
+	  }
+	  for (x in obj) {
+	    out.push(x);
+	  }
+	  return out;
+	}
+	var Mynum = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];
+	result = removeDuplicates(Mynum);
+	console.log(Mynum);
+	console.log(result);
+	 
+	 Output:
 
- [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6]
-["1", "2", "3", "4", "5", "6", "7", "8"]
+	[1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6]
+	["1", "2", "3", "4", "5", "6", "7", "8"]
 
 =================================================================================================
 
@@ -151,6 +154,7 @@ return temp.sort((a,b) => a-b);
 
 console.log(differenceOf2Arrays([1, 2, 3], [100, 2, 1, 10]));
 console.log(differenceOf2Arrays([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]));
+
 Output:
 
 [3,10,100]
@@ -204,10 +208,6 @@ function valid_email(str)
 }
 
 
-
-
-
-
 Input/Output:
 valid_email("narang.simran30@gmil.com");
  Valid email address!
@@ -220,32 +220,16 @@ valid_email("narang.simran30@gom");
  9) Write a JavaScript program to list the properties of a JavaScript object?
 
 
-	var getKeys = function(obj){
-	if (!isObject(obj)) return [];   var keys = [];
-   	
-   	for (var key in obj) {
-    
-    	if (obj.hasOwnProperty(key)) {
-        	keys.push(key);
-    	}
-    } 
-
-    return keys;
-   	}
-
-   	function isObject(obj) 
-	{
-    var type = typeof obj;
-    return type === 'function' || type === 'object' && !!obj;
-  	}
-
   	var student = { 
 	name : "David Rayy", 
 	sclass : "VI", 
 	rollno : 12 };
- Output: 
 
- name,sclass,rollno
+	console.log(Object.keys(student));
+
+
+ Output: 
+["name", "sclass", "rollno"]
 
 ========================================================================================================
 
@@ -253,15 +237,8 @@ valid_email("narang.simran30@gom");
 
 var students = [['David', 80], ['Vinoth', 77], ['Divya', 88], ['Ishitha', 95], ['Thomas', 68]];
 
-var Avgmarks = 0;
-
-for (var i=0; i < students.length; i++) {
-        Avgmarks += students[i][1];
-        var avg = (Avgmarks/students.length);
-}
-
-console.log("Average grade: " + (Avgmarks)/students.length);
-
+	for(var i=0; i< students.length;i++){
+		avg = student[i][1];
         if (avg < 60){
           console.log("Grade : F");      
           } 
@@ -275,13 +252,19 @@ console.log("Average grade: " + (Avgmarks)/students.length);
                 console.log("Grade : B"); 
         } else if (avg < 100) {
                 console.log("Grade : A"); 
-}
+        }
+       }
 
 Output:
-Average grade: 81.6
-Grade: B
+
+Grade : B
+Grade : C
+Grade : B
+Grade : A
+Grade : D
 
 =================================================================================================
+
 11) Write a JavaScript function that returns a passed string with letters in alphabetical order?
 
 	function alphabet_order(str){
@@ -320,7 +303,8 @@ Output:
 ====================================================================================================
 13) Flatten the following object:var myObj = [5, [22], [[14]], [[4]],[5,6]].
 
-ans. 
+ans.
+
 	function flatten(array1){
 	array1 = array1.toString().split(',').map(Number); 
 	return array1;
@@ -333,6 +317,7 @@ ans.
 
 Output:
 [5, 22, 14, 4, 5, 6]
+
 ======================================================================================================
 14)
 

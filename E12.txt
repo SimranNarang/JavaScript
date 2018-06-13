@@ -1,0 +1,117 @@
+	function tellFortune(children,name,location,title){ 
+
+	return "You will be a "+title+" in "+location+", and married to "+name+" with "+children+" kids."
+	}
+
+	tellFortune(3,"aruna","surat","business man")
+
+	Output: "You will be a business man in surat, and married to aruna with 3 kids."
+
+	__________________________________________________________________________
+
+	function calculateDogAge(age, rate){
+	return "Your doggie is "+(age*rate)+" years old in dog years."
+	}
+	calculateDogAge(7,6)
+
+	Output:
+	Your doggie is 42 years old in dog years.
+_________________________________________________________________________________
+
+	const max_age = 50;
+	function calculateSupply(age, amt){
+	  var amount = (max_age-age)*amt;
+	  return "You will need "+amount+" to last you until the ripe old age of "+max_age
+	}
+	Input/Output:
+
+	calculateSupply(10,50)
+	"You will need 2000 to last you until the ripe old age of 50"
+
+	calculateSupply(1,20)
+	"You will need 980 to last you until the ripe old age of 50"
+
+	calculateSupply(25,70)
+	"You will need 1750 to last you until the ripe old age of 50"
+
+__________________________________________________________	
+
+function calculateSupply(age, amt){
+	  var amount = (max_age-age)*amt; amount = Math.round(amount);
+	  return "You will need "+amount+" to last you until the ripe old age of "+max_age
+	}
+
+	Input/Output:
+	calculateSupply(25,70.25)
+	"You will need 1756 to last you until the ripe old age of 50"
+
+	calculateSupply(12,70.55)
+	
+	"You will need 2681 to last you until the ripe old age of 50"
+
+	________________________________________________________
+
+	const PI= 3.14;
+
+	function calcCircumference(rad){
+		cir = 2*PI*rad;
+		return "The circumference is "+cir
+	}
+
+	function calcArea(rad){
+		area = PI*rad*rad;
+		return "The area is "+area
+	}
+
+	Input/Output:
+
+	calcArea(12)
+	"The area is 452.15999999999997"
+	
+	calcCircumference(12)
+	"The circumference is 75.36"
+
+	_____________________________________________________
+
+	function celsiusToFahrenheit( temp ){
+	  var f = (9/5)*temp + 32;
+	  return temp+" C is "+f+" F";
+
+	}
+	function fahrenheitToCelsius( temp ){
+	  var f = (temp-32)*(5/9);
+	  return temp+" F is "+f+" C";
+
+	}
+
+	input/output:
+
+	celsiusToFahrenheit(10)
+	
+	"10 C is 50 F"
+	
+	fahrenheitToCelsius(50)
+	
+	"50 F is 10 C"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
